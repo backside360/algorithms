@@ -1,21 +1,22 @@
+const { binaryData } = require('../data.json');
+
 /**
-  * Функция бинарного поиска в отсортированном списке
-  * @param {array} list - Список элементов по которым необходимо выполнить поиск
-  * @param {number} item - Элемент который необходимо найти в списке
-  * @return {null|number} - Возвращает найденный элемент или если элемент не найдет null
-  *
-  * @example
-  *   const list = [1,2,3,4,5];
-  *   const item = 4;
-  *   binarySearch(list, item);
-  */
+ * Функция бинарного поиска в отсортированном списке
+ * @param {array} list - Список элементов по которым необходимо выполнить поиск
+ * @param {number} item - Элемент который необходимо найти в списке
+ * @return {null|number} - Возвращает найденный элемент или если элемент не найдет null
+ *
+ * @example
+ *   const list = [1,2,3,4,5];
+ *   const item = 4;
+ *   binarySearch(list, item);
+ */
 function binarySearch(list, item) {
   /** Старт поиска */
   let low = 0;
   /** Конец поиска */
   let high = list.length - 1;
 
-  
   /** Цикл */
   while (low <= high) {
     /** Указатель текущий выбранный элемент в списке  */
@@ -34,5 +35,4 @@ function binarySearch(list, item) {
   return null;
 }
 
-let myList = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-console.log(binarySearch(myList, 5));
+console.log('Index: ', binarySearch(binaryData.data, binaryData.value));
