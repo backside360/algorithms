@@ -11,8 +11,8 @@ const { sortData } = require("../data.json");
  */
 
 function findSmallestIndex(array) {
-  var smallestElement = array[0]; 
-  var smallestIndex = 0; 
+  var smallestElement = array[0];
+  var smallestIndex = 0;
 
   for (var i = 1; i < array.length; i++) {
     if (array[i] < smallestElement) {
@@ -30,15 +30,13 @@ function findSmallestIndex(array) {
  * @return {array} sortedArray - Возвращает отсортированный массив
  *
  * @example
- *    const array = [5, 12, 32, 1, 4, 340, 120];
- *    function selectionSort(array);
+ *    selectionSort([5, 12, 32, 1, 4, 340, 120]);
  */
 
 function selectionSort(array) {
   var sortedArray = [];
-  var length = array.length;
 
-  for (var i = 0; i < length; i++) {
+  for (var i = 0; i < array.length; i++) {
     // Находим наименьший элемент
     var smallestIndex = findSmallestIndex(array);
     // Добавляем наименьший элемент в новый массив

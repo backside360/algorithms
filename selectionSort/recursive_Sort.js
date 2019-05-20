@@ -23,6 +23,8 @@ function findSmallest(arr) {
  * Функция сортировки с использованием рекурсии
  * @param {Array} arr - Массив, в котором необходимо произвести поиск
  * @return {Array} -  Возвращает отсортированный массив
+ * @example
+ *    selectionSort([5, 12, 32, 1, 4, 340, 120]);
  */
 function selectionSort(arr) {
   if (!arr.length) return [];
