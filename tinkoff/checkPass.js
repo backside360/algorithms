@@ -10,10 +10,10 @@
 
 function checkPass(password) {
   if (password.match(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z0-9]{8}/)) {
-    return console.log("YES");
+    return "YES";
   } else {
-    return console.log("NO");
+    return "NO";
   }
 }
 
-checkPass("sSssssss11");
+console.log(checkPass("sSssssss11"));
