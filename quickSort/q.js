@@ -1,3 +1,9 @@
+/**
+ * Функция быстрой сортировки массива
+ * @param {Array} arr -  Массив, который необходимо отсортировать
+ * @return {array} - Возвращает массив, отсортированный по возрастанию
+ */
+
 function quicksort(array) {
   if (array.length < 2) {
     // base case, arrays with 0 or 1 element are already "sorted"

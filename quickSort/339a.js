@@ -1,18 +1,19 @@
-function money(m, n) {
-  var arr = n.split(" ");
+/**
+ * Функция сортировки строки возрастанию
+ * @param {string} numbers - Строка, в котором необходимо произвести поиск
+ * @return {string}  - Возвращает отсортированную строку
+ *
+ * @example
+ *    findSum("5+2+3+1");
+ */
+
+function findSum(numbers) {
+  var arr = numbers.split("+");
   arr.sort(function(a, b) {
-    return b - a;
+    return a - b;
   });
-  function arrSum(arr) {
-    return arr.reduce(function(sum, current) {
-      return sum + current;
-    }, 0);
-  }
-  for (i = 0; i < arr.lenght; i++) {
-    if (arrSum(arr.slice(0, i++)) > arrSum(arr.slice(i++))) {
-      return i;
-    }
-  }
+  var newSum = arr.join("+");
+  return newSum;
 }
 
-console.log(money("5", "1 2 3 4 5"));
+console.log(findSum("3+2+1"));
