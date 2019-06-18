@@ -12,7 +12,7 @@ function sum(arr) {
   for (i = 0; i < arr.length; i++) {
     total += arr[i];
   }
-  return typeof total;
+  return total;
 }
 
 console.log(sum([2, 4, 6]));

@@ -7,13 +7,10 @@
  *    findSum("5+2+3+1");
  */
 
-function findSum(numbers) {
-  var arr = numbers.split("+");
-  arr.sort(function(a, b) {
-    return a - b;
-  });
-  var newSum = arr.join("+");
-  return newSum;
-}
+const findSum = numbers =>
+  numbers
+    .split("+")
+    .sort((a, b) => a - b)
+    .join("+");
 
 console.log(findSum("3+2+1"));

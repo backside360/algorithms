@@ -7,13 +7,10 @@
  *    cubic("3 2 1 2");
  */
 
-function cubic(data) {
-  var arrData = data.split(" ");
-  arrData.sort(function(a, b) {
-    return a - b;
-  });
-  var gravityNumber = arrData.join(" ");
-  return gravityNumber;
-}
+const getSortedCubic = data =>
+  data
+    .split(" ")
+    .sort((a, b) => a - b)
+    .join(" ");
 
-console.log(cubic("3 2 1 2"));
+console.log(getSortedCubic("3 2 1 2"));

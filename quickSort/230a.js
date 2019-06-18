@@ -7,19 +7,20 @@
  *    dragon(["2 2", "1 50", "30 1"]);
  */
 
-function dragonLevel(arrData) {
-  var power = Number(arrData[0].split(" ")[0]);
-  var dragons = arrData.slice(1).sort(function(a, b) {
-    return Number(a.split(" ")[0] - b.split(" ")[0]);
-  });
+function dragonLevel(kirito, ...dragons) {
+  let power = Number(kirito.split(" ")[0]);
+
   for (var i = 0; i < dragons.length; i++) {
-    if (power > Number(dragons[i].split(" ")[0])) {
-      power += Number(dragons[i].split(" ")[1]);
+    const dragonPower = Number(dragons[i].split(" ")[0]);
+    const dragonExp = Number(dragons[i].split(" ")[1]);
+
+    if (power > dragonPower) {
+      power += dragonExp;
     } else {
-      return "NO";
+      return "No";
     }
   }
   return "YES";
 }
 
-console.log(dragon(["2 2", "1 50", "30 1"]));
+console.log(dragonLevel("2 2", "1 50", "53 1"));
