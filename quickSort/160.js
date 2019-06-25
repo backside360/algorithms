@@ -11,12 +11,15 @@
 const arrSum = arr => arr.reduce((sum, current) => sum + current, 0);
 
 function money(m, n) {
-  var arr = n.split(" ").sort((a, b) => b - a);
+  var arr = n
+    .split(" ")
+    .map(el => Number(el))
+    .sort((a, b) => b - a);
   for (i = 0; i < arr.length; i++) {
     if (arrSum(arr.slice(0, i + 1)) > arrSum(arr.slice(i + 1))) {
-      return i;
+      return i + 1;
     }
   }
 }
 
-console.log(money("5", "1 2 3 4 5"));
+console.log(money("5", "1 2 3 4 5 20"));
