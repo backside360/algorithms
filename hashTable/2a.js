@@ -8,7 +8,7 @@
  */
 
 function findWinner(data) {
-  let obj = {};
+  let obj = {}; 
   data = data.slice(1);
   let winner;
   for (let i = 0; i < data.length; i++) {
