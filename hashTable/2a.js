@@ -7,25 +7,34 @@
  *    findWinner(["3", "mike -2", "andrew 3", "mike 2"])
  */
 
-function findWinner(data) {
-  let obj = {};
-  data = data.slice(1);
-  let winner;
+const transformPlayers = data => data.slice(1).map(el => {
+    const [playerName, score] = el.split(" ");
+    return { playerName, score: Number(score) }
+  });
+
+
+function findWinner(data) { // Стрелочная функция
+  const obj = {};
+  
+  const players = transformPlayers(data) // Создать новую переменную и работать с ней
+  
+  let winner = players[0].playerName;
+  
   for (let i = 0; i < data.length; i++) {
-    var nameScore = data[i].split(" ");
-    if (nameScore[0] in obj) {
-      obj[nameScore[0]] += Number(nameScore[1]);
+    const [playerName, score] = data[i].split(" "); // отказаться от var
+    
+    if (playerName in obj) {
+      obj[playerName] += score;
     } else {
-      obj[nameScore[0]] = Number(nameScore[1]);
+      obj[playerName] = score);
     }
-    if (winner === undefined) {
-      winner = nameScore[0];
-    } else {
-      if (obj[winner] < obj[nameScore[0]]) {
-        winner = nameScore[0];
-      }
+    
+    if (obj[winner] < obj[playerName]) {
+      winner = playerName;
     }
+    
   }
+  
   return winner;
 }
 
