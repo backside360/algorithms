@@ -16,6 +16,7 @@ function checkLogin(login) {
       arr.push("OK");
     } else {
       for (let y = 1; y < 100000; y++) {
+        // While
         let newLogin = login[i] + y;
         if (!(newLogin in database)) {
           database[newLogin] = "name";
