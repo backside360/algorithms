@@ -7,7 +7,7 @@
  *    checkLogin(["aba", "abab", "aba", "aba"])
  */
 
-function checkLogin(login) {
+const checkLogin = login => {
   let arr = [];
   let database = {};
   for (let i = 0; i < login.length; i++) {
@@ -15,18 +15,19 @@ function checkLogin(login) {
       database[login[i]] = "name";
       arr.push("OK");
     } else {
-      for (let y = 1; y < 100000; y++) {
-        // While
+      let y = 1;
+      while (y < login.length) {
         let newLogin = login[i] + y;
+        y++;
         if (!(newLogin in database)) {
           database[newLogin] = "name";
-          arr.push(newLogin);
+          arr.push(newLogin); 
           break;
         }
       }
     }
   }
   return arr;
-}
+};
 
 console.log(checkLogin(["aba", "abab", "aba", "aba"]));
