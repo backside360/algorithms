@@ -20,10 +20,10 @@ const findLove = planes => {
       step = graph[step];
     }
     if (step == i) {
-      return console.log('YES');
+      return 'YES';
     }
   }
-  return console.log('NO');
+  return 'NO';
 };
 
 console.log(findLove('5 5 4 5 3'));
